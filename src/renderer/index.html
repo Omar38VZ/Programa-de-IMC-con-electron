@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de IMC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Tu Salud, Tu IMC</h1>
+      <p>Calcula tu Índice de Masa Corporal y lleva un registro de tu progreso.</p>
+    </header>
+
+    <main>
+      <section class="calculator-card">
+        <form id="imc-form">
+          <div class="input-group">
+            <label for="weight">Peso (kg)</label>
+            <input type="number" id="weight" step="0.1" placeholder="Ej. 70.5" required>
+          </div>
+          <div class="input-group">
+            <label for="height">Altura (metros)</label>
+            <input type="number" id="height" step="0.01" placeholder="Ej. 1.75" required>
+          </div>
+          <button type="submit" class="btn-primary">Calcular IMC</button>
+        </form>
+
+        <div id="result-container" class="hidden">
+          <p class="result-label">Tu IMC es:</p>
+          <div class="result-value" id="imc-value">0.00</div>
+          <div class="result-classification" id="imc-classification">-</div>
+        </div>
+      </section>
+
+      <section class="history-card">
+        <div class="history-header">
+          <h2>Historial de Registros</h2>
+          <button id="clear-btn" class="btn-secondary">Limpiar Historial</button>
+        </div>
+        <div class="table-container">
+          <table id="history-table">
+            <thead>
+              <tr>
+                <th>Fecha y Hora</th>
+                <th>Peso (kg)</th>
+                <th>Altura (m)</th>
+                <th>IMC</th>
+                <th>Clasificación</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <!-- Datos inyectados por JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+
+</html>
